@@ -2,11 +2,11 @@ package com.tanvirdragneel.memorygame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.GridLayout
+import  android.widget.GridLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import MemoryBoardAdapter
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvBoard: RecyclerView

@@ -4,7 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.math.min
 
 class MemoryBoardAdapter(private val context: Context, private val numPieces:Int) :
     RecyclerView.Adapter<MemoryBoardAdapter.ViewHolder>() {
@@ -13,7 +15,13 @@ class MemoryBoardAdapter(private val context: Context, private val numPieces:Int
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         //we gonna use layout inlator for ,which we will create from context
+        val cardWidth =  parent.width / 2
+        val cardHeight = parent.height /4
+        val cardSideLength = min(cardWidth, cardHeight)
+
         val view = LayoutInflater.from(context).inflate(R.layout.memory_card,parent,false)
+        val layoutParams = view.findViewById<CardView>(R.id.cardView).layoutParams
+        layoutParams.width = cardSideLength
         return ViewHolder(view)
     }
 
@@ -29,3 +37,4 @@ class MemoryBoardAdapter(private val context: Context, private val numPieces:Int
         }
     }
 }
+//class MemoryBardAdapter(mainActivity: MainActivity, i: Int) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
